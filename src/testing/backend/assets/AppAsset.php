@@ -29,6 +29,7 @@ class AppAsset extends AssetBundle
         'js/section/index.js',
         'js/completed-test/index.js',
         'js/test/index.js',
+        'js/test/edit.js',
 
     ];
     public $depends = [

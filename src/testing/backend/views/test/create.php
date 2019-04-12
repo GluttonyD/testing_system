@@ -18,8 +18,8 @@ $this->title = 'Создание теста';
                     <input id="test-name" type="text" class="form-control" placeholder="Введите название теста" name="TestForm[name]">
                     <label for="test-repeatable">Повторное прохождение</label>
                     <select id="test-repeatable" class="form-control "
-                            style="width: 100%;" tabindex="-1" aria-hidden="true"
-                            name="TestForm[repeatable]">
+                                                        style="width: 100%;" tabindex="-1" aria-hidden="true"
+                                                        name="TestForm[repeatable]">
                         <option selected="selected" value="1">Да</option>
                         <option value="0">Нет</option>
 

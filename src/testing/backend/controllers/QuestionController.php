@@ -72,4 +72,9 @@ class QuestionController extends Controller
             'form'=>$form
         ]);
     }
+
+    public function actionGetQuestionList(){
+        $questions=Question::find()->asArray()->all();
+        return json_encode($questions);
+    }
 }

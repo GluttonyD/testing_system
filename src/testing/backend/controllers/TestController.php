@@ -9,6 +9,7 @@
 namespace backend\controllers;
 
 
+use backend\models\EditTestForm;
 use backend\models\PassedTestForm;
 use backend\models\TestForm;
 use common\models\PassedTest;
@@ -68,6 +69,16 @@ class TestController extends Controller
            'test'=>$test,
             'questions'=>$questions,
             'pages'=>$pages
+        ]);
+    }
+
+    public function actionEdit($id){
+        $form=new EditTestForm($id);
+        if($form->load(Yii::$app->request->post()) && $form->edit()){
+            return $this->redirect('/test/index');
+        }
+        return $this->render('edit',[
+            'form'=>$form
         ]);
     }
 

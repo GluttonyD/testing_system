@@ -35,7 +35,8 @@ $this->title = 'Список тестов';
                                         <td><?= date('d-m-Y H:i', $test->created_at + 3 * 3600) ?></td>
                                         <td>
                                             <a class="fa fa-info-circle" title="Информация о тесте" href="/test/details?id=<?= $test->id ?>"></a>
-                                            <a href="/test/delete?id=<?= $test->id ?>" class="fa fa-trash delete-test" id="<?= $test->id ?>"></a>
+                                            <a href="/test/delete?id=<?= $test->id ?>" class="fa fa-trash delete-test" id="<?= $test->id ?>" title="Удаление"></a>
+                                            <a href="/test/edit?id=<?= $test->id ?>" class="fa fa-pencil" title="Редактирование"></a>
                                         </td>
                                     </tr>
                                 <?php } ?>

@@ -89,6 +89,25 @@ class Test extends \yii\db\ActiveRecord
         $this->delete();
     }
 
+    public function deleteQuestionLinks(){
+        /**
+         * @var TestQuestion[] $links
+         */
+        $links=TestQuestion::find()->where(['test_id'=>$this->id])->all();
+        if($links){
+            foreach ($links as $link){
+                $link->delete();
+            }
+        }
+    }
+
+    public function getQuestionsCount(){
+        if($this->questions) {
+            return $this->getQuestions()->count();
+        }
+        return 0;
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
