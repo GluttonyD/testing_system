@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use common\models\User;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -97,4 +98,12 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    public function actionFirstUser(){
+        $user=new User();
+        $user->username='admin';
+        $user->password_hash=Yii::$app->security->generatePasswordHash('mypasswordveryhard');
+        $user->save();
+    }
+
 }
